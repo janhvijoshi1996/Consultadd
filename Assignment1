@@ -1,0 +1,9 @@
+Primitive datatypes used in Java
+1. Integer – keyword of using integer datatype is int . it is of 4 bytes.
+2. character – keyword is char. 2 bytes memory.
+3. Boolean- used for true and false. Keyword- boolean It is of one bit.
+4. short – keyword is short  and used for shorter integer range. Its memory size is 2 bytes.
+5. Long- keyword is long and used for wide range of integer. Its memory size is 8 bytes.
+6. float- float is used for decimal values and keyword is float. Its memory size is 4 bytes.
+7.double- double is also used for decimal values but  has higher range than float. Its keyword is double and memory size is 8 bytes.
+8. byte- byte has smaller inter range and it takes 2 byte of memory. Keyword is byte.
