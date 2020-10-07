@@ -6,8 +6,10 @@ import java.util.Scanner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.java.prac.Dao.IEmployeeDAO;
+import com.java.prac.Dao.IPersonDAO;
 import com.java.prac.config.AppConfig;
 import com.java.prac.model.Employee;
+import com.java.prac.personModel.Person;
 
 public class Main 
 {
@@ -15,7 +17,6 @@ public class Main
 	{
 		AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext(AppConfig.class);
 		IEmployeeDAO employeedao=context.getBean(IEmployeeDAO.class);
-		
 		
 		int choice=0;
 		Scanner sc=new Scanner(System.in);
@@ -81,6 +82,54 @@ public class Main
 				case 6:
 					break;
 					
+			}
+		}
+	
+		IPersonDAO persondao=context.getBean(IPersonDAO.class);
+		
+		int option=0;
+		 
+		while(option!=4)
+		{
+			System.out.println("*************Select you option***********");
+			System.out.println("1. list all the person details");
+			System.out.println("2. show particular person details");
+			System.out.println("3. insert new person details");
+			System.out.println("4. exit");
+			option=sc.nextInt();
+			switch (option) 
+			{
+				case 1:
+				{
+					System.out.println("List all the person details");
+					for (Person per : persondao.listAllPerson())
+					{
+						System.out.println(per);
+					}
+					break;
+				}
+				case 2:
+				{
+					System.out.println("show particular person details");
+					System.out.println("enter id---");
+					int idd=sc.nextInt();
+					Person ps=persondao.getPersonById(idd);
+					System.out.println("name:"+ps.getName()+"\t surname:"+ps.getSurame()+"\t age:"+ps.getAge());
+					break;
+				}
+				case 3:
+				{
+					Person pers=new Person("sravya", "polasitti", 25, 5);
+					persondao.insertPerson(pers);
+					for (Person perso : persondao.listAllPerson())
+					{
+						System.out.println(perso);
+					}
+					break;
+				}
+				case 4:
+					break;
+				
 			}
 		}
 	}
