@@ -9,6 +9,7 @@ public class Driver
 	{
 		Rectangle rec=new Rectangle();
 		Rectangle rec1=new Rectangle();
+		Rectangle rec2=new Rectangle();
 		rec.area();
 		rec1.setLength(20);
 		rec1.setWidth(10);
@@ -16,6 +17,7 @@ public class Driver
 		rec=rec1;
 		rec.area();
 		String input="null";
+		System.out.println("thie is the rec2 object " +rec2);
 		System.out.println("\n"+"Option part---------------");
 		Rectangle rect=new Rectangle();
 		while(!input.equals("0")) 
